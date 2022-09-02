@@ -1,0 +1,8 @@
+1. data types are the kinds of information that the language is able to understand and use within statements and other processes. 
+    in Javascript, they are "strings", numbers, Booleans, null, NaN, undefined, and complex data types like array, object, and function
+2. Operators are used to mutate/change, compare, or evaluate data/values. +, -, *, /, <, >, ===, etc. 
+3. if (condition is true), then (additional code in the tatement is ran.) If it wasn't true/fulfilled, then the statement is skipped. 
+4. Loops are iterative sections of code that are run multiple times, often with changing variables. 
+    They allow youto do the same process over several values in an array, list, or by increments 
+    across a known or unknown number of items. 
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function findWaldo(group) {
+        //   group.forEach(element => {
+        let foundWaldos = [];
+        for (let i = 0; i <= group.lenght; i++) {
+          if (group[i] === "Waldo") {
+            foundWaldos.push("Found Waldo!");
+          } else {
+            foundWaldos.push(group[i]);
+          }
+        }
+        console.log(foundWaldos);
+        return foundWaldos;
+      }
+
+      findWaldo(["Stacy", "Waldo", "John"]); // returns ['Stacy', 'Found Waldo!', 'John']
+      findWaldo(["Waldo", "Jimmy", "James", "Jamie", "Waldo"]); // ['Found Waldo!', 'Jimmy', 'James', 'Jamie', 'Found Waldo!']
+    </script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <style>
+      body,
+      .jumbotron {
+        padding: 30px;
+      }
+      body {
+        background-image: url(./images/pexels-photo-12791156.jpeg);
+        background-size: auto;
+      }
+      .content {
+        font-size: 18px;
+        line-height: 1.5;
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+        border-radius: 5px;
+      }
+      .floater {
+        background: #fff;
+        z-index: 11;
+        transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.4) all;
+        margin-bottom: 30px;
+      }
+      .floater input[type="text"] {
+        padding: 30px 20px;
+        border: none;
+        box-shadow: none;
+        font-size: 13px;
+        transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.4) all;
+      }
+      .floater-bottom {
+        padding: 6px 10px 7px;
+        text-align: right;
+        border-top: 1px solid #ddd;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgb(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: 0.3s ease opacity;
+        z-index: 10;
+        pointer-events: none;
+      }
+
+      body.show-floater .floater {
+        transform: scale(1.1);
+      }
+      body.show-floater .floater input[type="text"] {
+        padding: 50px 20px;
+        font-size: 17px;
+      }
+      body.show-floater .overlay {
+        opacity: 1;
+        pointer-events: all;
+      }
+      /* -------------------- */
+
+      .bookmarks-list {
+        position: relative;
+        z-index: 9;
+      }
+
+      .bookmark {
+        display: flex;
+        background: #fff;
+        position: relative;
+        color: #999;
+        padding: 20px;
+        transition: 0.3s ease all;
+        border-bottom: 1px solid #DDD;
+        font-size: 15px;
+      }
+      .bookmark:hover {
+        color: ice;
+        text-decoration: none;;
+      }
+      .bookmark:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .bookmark:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom: 0;
+      }
+
+      .bookmark .img {
+        background-color: #DDD;
+        border-radius: 3px;
+        background-image:url('https://cdn.onlinewebfonts.com/svg/img_358111.png');
+        background-size: cover;
+        width: 70px;
+        height: 60px;
+      } 
+      .bookmark .title {
+        display: flex;
+        align-items: center;
+      }
+      
+      .bookmark .glyphicon-remove {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: rgb(238, 238, 238);
+        font-size: 12px;
+        transition: 0.3s ease color;
+        cursor: pointer;
+      }
+      .bookmark:hover .glyphicon-remove {
+        color: rgb(136, 18, 18);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay"></div>
+
+    <div class="floater content">
+      <form class="bookmark-form" type="submit">
+      <div class="floater-top">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="What's on your mind?"
+        />
+      </div>
+      <div class="floater-button">
+        <button class="btn btn-primary btn-sm">Add</button>
+      </div>
+      </form>
+    </div>
+
+    <div class="bookmarks-list content"></div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
