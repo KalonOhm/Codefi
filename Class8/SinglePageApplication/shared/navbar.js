@@ -1,11 +1,18 @@
-export default class Navbar{
-    constructor(){
-        this.render();
-    }
+import Home from "../pages/home.js";
+import Settings from "../pages/settings.js";
 
-    render(){
-        let appElem = document.getElementById('app');
-        appElem.innerHTML += `
+export default class Navbar {
+  constructor() {
+    this.render();
+    this.addEventListeners();
+  }
+
+  render() {
+    let appElem = document.getElementById("app");
+
+    appElem.insertAdjacentHTML(
+      "beforeend",
+      `
         <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -14,11 +21,11 @@ export default class Navbar{
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <li class="nav-item" id="home" style="cursor:pointer">
+          <a class="nav-link active" aria-current="page" >Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li class="nav-item" id="settings" style="cursor:pointer">
+          <a class="nav-link" >Settings</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,6 +50,27 @@ export default class Navbar{
   </div>
   </nav>
   `
-  ;
-    }
+    );
+  }
+
+  addEventListeners() {
+    //declare varialbe and access elements
+    let homeElem = document.getElementById("home");
+    let settingsElem = document.getElementById("settings");
+    let appElem = document.getElementById('app');
+    //attach event listeners
+    homeElem.addEventListener("click", () => {
+      //clear appElem then re-initialize navbar & home
+      appElem.innerHTML = '';
+      new Navbar();
+      new Home();
+    });
+
+    settingsElem.addEventListener("click", () => {
+      //clear the app elem and reinitialize navbar and settings
+      appElem.innerHTML = '';
+      new Navbar();
+      new Settings();
+    });
+  }
 }

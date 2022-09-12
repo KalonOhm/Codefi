@@ -1,14 +1,18 @@
-export default class Home{
-    // render elements onto page
+export default class Home {
+  // render elements onto page
 
-    constructor(){
-        //when home instance is created, call render
-        this.render()
-    }
-    render(){
-        let appElem = document.getElementById('app');
-        appElem.innerHTML += `
+  constructor() {
+    //when home instance is created, call render
+    this.render();
+  }
+  render() {
+    let appElem = document.getElementById("app");
+
+    appElem.insertAdjacentHTML(
+      "beforeend",
+      `
         <h1 class='text-center'>Social Media Page</h1>
         `
-    }
+    );
+  }
 }
