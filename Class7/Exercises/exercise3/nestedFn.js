@@ -1,18 +1,13 @@
 let x = 10;                                         //x = 10
-
 function foo(a) {                                   //foo which takes argument a, which will be 5
-  
   let b = 20;                                       //b = 20
-  
   function bar(c) {                                 //bar which takes arg c
     let d = 30;                                     //d = 30
     return boop(x + a + b + c + d);                 //boop (10(x) + 5(a) + 20(b) + 15(c) + 30(d))
   }                                                 //
-  
   function boop(e) {                                //boop which takes arg e
     console.log(e * -1);                            //console.log (e * -1)
   }                                                 //not seeing where we get c, unless it's from moar(15)'s input? 
-  
   return bar;                                       //if c = 15,
 }                                                   //-80
 let moar = foo(5); // Closure
