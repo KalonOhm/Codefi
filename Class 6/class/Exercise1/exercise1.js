@@ -1,12 +1,8 @@
 //I think it will say Pete. You call the function after name has been reassigned to Pete
-
-let name = "John";
-
+var names = "John";
 function sayHi() {
-  alert("Hi, " + name);
+    alert("Hi, " + names);
 }
-
-name = "Pete";
-
+names = "Pete";
 sayHi();
 //doesn't like using deprecated names
